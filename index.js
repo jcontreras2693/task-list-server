@@ -2,27 +2,16 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+const view = require('./list-view-router.js');
+const edit = require('./list-edit-router.js');
+const { tasks } = require('./tasks');
+
+app.use('/view', view);
+app.use('/edit', edit);
+
 app.listen(PORT, () => {
     console.log(`Server running on port: ${PORT}`); // Interpolación corregida
 });
-
-const tasks = [  // Se cambió a "tasks" para ser más semántico
-    {
-        "id": 1,
-        "isCompleted": false,
-        "description": "Walk the dog",
-    },
-    {
-        "id": 2,
-        "isCompleted": false,
-        "description": "Get a shower",
-    },
-    {
-        "id": 3,
-        "isCompleted": false,
-        "description": "Make the bed",
-    },
-];
 
 //GET /tasks
 app.get('/tasks', (req, res) => {
