@@ -1,4 +1,4 @@
-# task-list-server | Gestor de Tareas
+# task-list-server  | Gestor de Tareas
 
 ## ¿Qué es mi producto y para qué sirve?
 
