@@ -1,27 +1,41 @@
-# task-list-server  | Gestor de Tareas
+# task-list-server | Gestor de Tareas
 
 ## ¿Qué es mi producto y para qué sirve?
 
-Este mini servidor realizado usando Express es un **gestor de tareas** que permite a los usuarios ver, agregar, actualizar y borrar sus tareas de manera sencilla. Esto con el fin de mantenerse organizado, se pueden consultar las tareas pendientes, marcarlas como completadas y consultar los detalles de cada una.
+Este mini servidor realizado usando Express es un **gestor de tareas** que permite a los usuarios ver, agregar, actualizar y borrar sus tareas de manera sencilla. Con esta aplicación, los usuarios pueden organizar mejor su trabajo, consultar tareas pendientes, marcarlas como completadas y revisar los detalles de cada una.
+
+Además, se han implementado validaciones de seguridad mediante middleware, asegurando que las solicitudes sean correctas y evitando datos inválidos o métodos HTTP no permitidos.
 
 ## ¿Cuáles son las funcionalidades más importantes y por qué los usuarios las usarían?
 
-1. **Ver todas las tareas**: Los usuarios pueden ver una lista de todas sus tareas. Esto ayuda a tener un panorama general de todo lo que se debe hacer.
+1. **Ver todas las tareas**: Permite a los usuarios obtener una lista completa de sus tareas, lo que les ayuda a visualizar todas las actividades pendientes y planificar mejor su tiempo.
 
-2. **Filtrar tareas**: Los usuarios pueden ver solo las tareas pendientes o las completadas. Esta función es útil porque permite centrarse en las tareas que aún necesitan ser realizadas, mejorando la organización.
+2. **Filtrar tareas**: Se pueden ver únicamente las tareas pendientes o completadas, facilitando el enfoque en lo que realmente necesita atención.
 
-3. **Buscar una tarea especifica**: Cada tarea tiene asignado un ID que le permite al usuario consultarla directamente en caso de que tenga alguna duda sobre el estado de la misma, para actualizarla o borrarla.
+3. **Buscar una tarea específica**: Gracias a un ID único, los usuarios pueden consultar detalles de una tarea para revisarla, actualizarla o eliminarla según sea necesario.
 
-Estas funcionalidades son importantes porque ayudan a las personas a organizar su día a día, a no olvidar tareas y a ser más productivas.
+4. **Crear y actualizar tareas con validación**: Se ha implementado un middleware que impide crear o modificar tareas sin datos válidos, garantizando la integridad de la información.
+
+5. Gestión de errores y seguridad:
+   - Se validan los parámetros de las solicitudes para evitar errores.
+   - Se impide el uso de métodos HTTP no permitidos.
+   - Se manejan errores en los endpoints para evitar fallos inesperados.
+
+Estas funcionalidades mejoran la organización personal, reducen la posibilidad de olvidar tareas importantes y facilitan un flujo de trabajo más eficiente.
 
 ## ¿Qué tecnologías usaste y por qué?
 
-1. **Node.js**: Es una herramienta que nos permite crear aplicaciones web de manera rápida y eficiente. Es ideal para manejar muchas peticiones a la vez, lo cual es útil para aplicaciones como la nuestra.
+1. **Node.js**: Proporciona un entorno rápido y eficiente para manejar múltiples solicitudes simultáneamente, ideal para aplicaciones en tiempo real.
 
-2. **Express.js**: Es una herramienta que hace que la creación de rutas y la gestión de solicitudes web sea más fácil. Permite que los usuarios puedan interactuar con la aplicación de manera rápida.
+2. **Express.js**: Facilita la gestión de rutas y solicitudes HTTP, permitiendo una implementación rápida y limpia de las funcionalidades del servidor.
 
-3. **JavaScript**: Es el lenguaje principal para desarrollar tanto la parte del servidor como la parte del cliente (cuando se extienda). Es muy popular y flexible, lo que permite crear aplicaciones completas.
+3. **JavaScript**: Es el lenguaje base tanto del servidor como del cliente (cuando se amplíe el proyecto). Su flexibilidad y popularidad lo convierten en la mejor opción para este desarrollo.
 
-4. **JSON**: Es un formato de datos muy simple que usamos para enviar información entre el servidor y el cliente. Es ligero y fácil de entender, lo que facilita la comunicación entre las partes.
+4. **JSON**: Se utiliza para intercambiar datos entre el servidor y los clientes de manera ligera y estructurada.
 
-Estas tecnologías se eligieron porque son muy utilizadas en el desarrollo web, son fáciles de trabajar y nos permiten construir una aplicación rápida y funcional.
+5. **Middleware personalizado**:
+   - **Validación de datos** para evitar solicitudes POST y PUT incorrectas.
+   - **Gestión de errores** para asegurar que los parámetros y métodos HTTP sean correctos.
+   - **Control de accesos** para permitir solo solicitudes bien estructuradas.
+
+Estas tecnologías fueron elegidas por su popularidad, facilidad de uso y eficiencia, garantizando un desarrollo rápido, seguro y escalable.
