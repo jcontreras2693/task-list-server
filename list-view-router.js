@@ -30,4 +30,13 @@ router.get('/tasks/:id', (req, res) => {
     res.json(task);
 });
 
+// Middleware para validar parámetros en list-view-router
+router.use('/tasks/:id', (req, res, next) => {
+    const id = parseInt(req.params.id, 10);
+    if (isNaN(id) || id <= 0) {
+        return res.status(400).json({ message: 'ID inválido. Debe ser un número entero positivo.' });
+    }
+    next();
+});
+
 module.exports = router;

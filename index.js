@@ -17,3 +17,12 @@ app.listen(PORT, () => {
 app.get('/tasks', (req, res) => {
     res.json(tasks); // Asegúrate de usar "tasks" que es el nombre correcto de la variable
 });
+
+// Middleware para aceptar solo métodos HTTP válidos
+app.use((req, res, next) => {
+    const validMethods = ['GET', 'POST', 'PUT', 'DELETE'];
+    if (!validMethods.includes(req.method)) {
+        return res.status(405).json({ message: 'Método HTTP no permitido.' });
+    }
+    next();
+});
