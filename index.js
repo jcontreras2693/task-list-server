@@ -12,6 +12,8 @@ const view = require('./list-view-router.js');
 const edit = require('./list-edit-router.js');
 const { tasks } = require('./tasks');
 
+app.use(express.json());
+
 app.use('/view', view);
 app.use('/edit', edit);
 

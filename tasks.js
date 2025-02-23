@@ -12,7 +12,7 @@ const tasks = [
     },
     {
         "id": 3,
-        "isCompleted": false,
+        "isCompleted": true,
         "description": "Make the bed",
     },
 ];

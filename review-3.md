@@ -39,3 +39,73 @@ Estas funcionalidades mejoran la organización personal, reducen la posibilidad 
    - **Control de accesos** para permitir solo solicitudes bien estructuradas.
 
 Estas tecnologías fueron elegidas por su popularidad, facilidad de uso y eficiencia, garantizando un desarrollo rápido, seguro y escalable.
+
+## Funcionalidades
+
+### Autenticación
+   - **Iniciar sesión** mediante endpoints protegidos que usan autenticación mediante JWT. 
+      - Método POST:
+         ```
+         http://localhost:3000/login
+         ```
+      - Recibe:
+         ```
+         { "token": "JWT_TOKEN_GENERADO" }
+         ```
+   - **Uso del token** para acceder a rutas protegidas, se debe incluir el token en el encabezado de la siguiente forma:
+      ```
+      { "Authorization": "Bearer JWT_TOKEN_GENERADO" }
+      ```
+
+### Listar todas las tareas
+   - Método GET:
+      ```
+      http://localhost:3000/view/tasks
+      ```
+
+### Listar tareas completas e incompletas
+   - Método GET:
+      - Completas:
+      ```
+      http://localhost:3000/view/tasks?complete=true
+      ```
+      - Incompletas:
+      ```
+      http://localhost:3000/view/tasks?complete=false
+      ```
+
+### Obtener una tarea por ID
+   - Método GET:
+      ```
+      http://localhost:3000/view/tasks/:id
+      ```
+
+### Crear una tarea nueva
+   - Método POST:
+      ```
+      http://localhost:3000/edit/tasks
+      ```
+   - Cuerpo de la solicitud:
+      ```
+      { "description": "Nueva tarea" }
+      ```
+
+### Actualizar una tarea
+   - Método PUT:
+      ```
+      http://localhost:3000/edit/tasks/:id
+      ```
+   - Cuerpo de la solicitud (uno o ambos campos):
+      ```
+      { "description": "Tarea actualizada", "isCompleted": true }
+      ```
+
+### Obtener una tarea por ID
+   - Método DELETE:
+      ```
+      http://localhost:3000/edit/tasks/:id
+      ```
+
+## Autor
+
+Juan David Contreras Becerra
