@@ -100,7 +100,7 @@ Estas tecnologías fueron elegidas por su popularidad, facilidad de uso y eficie
       { "description": "Tarea actualizada", "isCompleted": true }
       ```
 
-### Obtener una tarea por ID
+### Borrar una tarea por ID
    - Método DELETE:
       ```
       http://localhost:3000/edit/tasks/:id
